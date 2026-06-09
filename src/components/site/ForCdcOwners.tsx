@@ -1,4 +1,5 @@
 import { Eye, Inbox, Settings2, MessageCircleHeart, TrendingUp, ArrowRight } from "lucide-react";
+import { Link } from "@tanstack/react-router";
 import { Reveal } from "./Reveal";
 
 const benefits = [
