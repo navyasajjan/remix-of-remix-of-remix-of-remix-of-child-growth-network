@@ -33,12 +33,35 @@ function ForCdcsPage() {
       <Navbar />
       <main>
         <CdcHero />
+        <CdcCta />
         <ForCdcOwners />
         <CdcOS />
         <TrustNetwork />
       </main>
       <Footer />
     </div>
+  );
+}
+
+function CdcCta() {
+  return (
+    <section className="relative py-10 sm:py-16">
+      <div className="mx-auto max-w-4xl px-5 text-center">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
+          <Link
+            to="/list-your-cdc"
+            className="inline-flex items-center gap-2 rounded-full bg-foreground px-8 py-4 text-base font-semibold text-background transition-transform hover:scale-[1.03]"
+          >
+            List Your CDC <ArrowRight size={18} />
+          </Link>
+        </motion.div>
+      </div>
+    </section>
   );
 }
 
