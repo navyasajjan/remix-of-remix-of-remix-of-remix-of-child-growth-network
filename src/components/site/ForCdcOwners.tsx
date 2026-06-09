@@ -1,4 +1,5 @@
 import { Eye, Inbox, Settings2, MessageCircleHeart, TrendingUp, ArrowRight } from "lucide-react";
+import { Link } from "@tanstack/react-router";
 import { Reveal } from "./Reveal";
 
 const benefits = [
@@ -24,12 +25,12 @@ export function ForCdcOwners() {
                   Turn discovery into appointments and run your centre with the
                   clarity of a modern product.
                 </p>
-                <a
-                  href="#"
+                <Link
+                  to="/list-your-cdc"
                   className="mt-7 inline-flex items-center gap-1.5 rounded-full bg-foreground px-7 py-3.5 text-sm font-semibold text-background transition-transform hover:scale-[1.03]"
                 >
-                  Claim Your CDC <ArrowRight size={16} />
-                </a>
+                  List Your CDC <ArrowRight size={16} />
+                </Link>
               </div>
 
               <div className="grid gap-3">

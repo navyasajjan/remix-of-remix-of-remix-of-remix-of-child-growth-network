@@ -64,12 +64,12 @@ export function Navbar() {
             Sign In
           </a>
           {isCdcPage ? (
-            <a
-              href="#"
+            <Link
+              to="/list-your-cdc"
               className="rounded-full bg-foreground px-5 py-2.5 text-sm font-semibold text-background transition-transform hover:scale-[1.03]"
             >
-              Claim Your CDC
-            </a>
+              List Your CDC
+            </Link>
           ) : (
             <Link
               to="/"
@@ -115,13 +115,13 @@ export function Navbar() {
                   Sign In
                 </a>
                 {isCdcPage ? (
-                  <a
-                    href="#"
+                  <Link
+                    to="/list-your-cdc"
                     onClick={() => setOpen(false)}
                     className="rounded-full bg-foreground px-5 py-3 text-center text-sm font-semibold text-background"
                   >
-                    Claim Your CDC
-                  </a>
+                    List Your CDC
+                  </Link>
                 ) : (
                   <Link
                     to="/"
