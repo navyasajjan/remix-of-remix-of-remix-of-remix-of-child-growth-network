@@ -10,12 +10,18 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
+import { Route as ListYourCdcRouteImport } from './routes/list-your-cdc'
 import { Route as ForCdcsRouteImport } from './routes/for-cdcs'
 import { Route as IndexRouteImport } from './routes/index'
 
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   id: '/sitemap.xml',
   path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ListYourCdcRoute = ListYourCdcRouteImport.update({
+  id: '/list-your-cdc',
+  path: '/list-your-cdc',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ForCdcsRoute = ForCdcsRouteImport.update({
@@ -32,30 +38,34 @@ const IndexRoute = IndexRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/for-cdcs': typeof ForCdcsRoute
+  '/list-your-cdc': typeof ListYourCdcRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/for-cdcs': typeof ForCdcsRoute
+  '/list-your-cdc': typeof ListYourCdcRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/for-cdcs': typeof ForCdcsRoute
+  '/list-your-cdc': typeof ListYourCdcRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/for-cdcs' | '/sitemap.xml'
+  fullPaths: '/' | '/for-cdcs' | '/list-your-cdc' | '/sitemap.xml'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/for-cdcs' | '/sitemap.xml'
-  id: '__root__' | '/' | '/for-cdcs' | '/sitemap.xml'
+  to: '/' | '/for-cdcs' | '/list-your-cdc' | '/sitemap.xml'
+  id: '__root__' | '/' | '/for-cdcs' | '/list-your-cdc' | '/sitemap.xml'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   ForCdcsRoute: typeof ForCdcsRoute
+  ListYourCdcRoute: typeof ListYourCdcRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
 }
 
@@ -66,6 +76,13 @@ declare module '@tanstack/react-router' {
       path: '/sitemap.xml'
       fullPath: '/sitemap.xml'
       preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/list-your-cdc': {
+      id: '/list-your-cdc'
+      path: '/list-your-cdc'
+      fullPath: '/list-your-cdc'
+      preLoaderRoute: typeof ListYourCdcRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/for-cdcs': {
@@ -88,8 +105,19 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   ForCdcsRoute: ForCdcsRoute,
+  ListYourCdcRoute: ListYourCdcRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}
