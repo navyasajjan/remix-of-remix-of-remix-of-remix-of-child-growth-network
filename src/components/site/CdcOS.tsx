@@ -42,24 +42,24 @@ const steps = [
 
 export function CdcOS() {
   return (
-    <section id="cdc-os" className="relative py-20 sm:py-28">
-      <div className="mx-auto max-w-6xl px-5">
+    <section id="cdc-os" className="relative py-14 sm:py-28">
+      <div className="mx-auto max-w-6xl px-4 sm:px-5">
         <Reveal className="mx-auto max-w-2xl text-center">
-          <h2 className="text-3xl font-bold sm:text-4xl">
+          <h2 className="text-2xl font-bold sm:text-4xl">
             The CDC Operating System
           </h2>
-          <p className="mt-4 text-muted-foreground">
+          <p className="mt-3 text-sm text-muted-foreground sm:mt-4 sm:text-base">
             Your admin dashboard — guided setup, staff, services, registrations,
             analytics, and publishing in one calm workspace.
           </p>
         </Reveal>
 
-        <Reveal delay={0.1} className="mt-12">
-          <div className="glass overflow-hidden rounded-[28px] p-0 shadow-xl">
+        <Reveal delay={0.1} className="mt-8 sm:mt-12">
+          <div className="glass overflow-hidden rounded-2xl p-0 shadow-xl sm:rounded-[28px]">
             <div className="flex min-h-[520px] flex-col lg:flex-row">
               {/* Sidebar */}
-              <aside className="w-full shrink-0 border-b border-white/40 bg-white/60 p-4 lg:w-64 lg:border-b-0 lg:border-r">
-                <div className="mb-4 flex items-center justify-between gap-2 rounded-xl bg-white/70 p-2.5">
+              <aside className="w-full shrink-0 border-b border-white/40 bg-white/60 p-3 sm:p-4 lg:w-64 lg:border-b-0 lg:border-r">
+                <div className="mb-3 flex items-center justify-between gap-2 rounded-xl bg-white/70 p-2.5 lg:mb-4">
                   <div className="flex items-center gap-2 min-w-0">
                     <div className="grid h-8 w-8 shrink-0 place-items-center rounded-lg bg-gradient-to-br from-primary to-primary/70 text-[10px] font-bold text-primary-foreground">
                       CDC
@@ -77,29 +77,29 @@ export function CdcOS() {
                     Approved
                   </span>
                 </div>
-                <nav className="flex flex-col gap-0.5">
+                <nav className="-mx-1 flex gap-1.5 overflow-x-auto px-1 pb-1 lg:mx-0 lg:flex-col lg:gap-0.5 lg:overflow-visible lg:px-0 lg:pb-0 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
                   {sidebar.map((item) => (
                     <div
                       key={item.label}
-                      className={`flex items-center gap-2.5 rounded-lg px-3 py-2 text-[13px] font-medium transition ${
+                      className={`flex shrink-0 items-center gap-2 rounded-lg px-2.5 py-1.5 text-[12px] font-medium transition lg:gap-2.5 lg:px-3 lg:py-2 lg:text-[13px] ${
                         item.active
                           ? "bg-primary/10 text-primary"
                           : "text-muted-foreground hover:bg-white/60"
                       }`}
                     >
-                      <item.icon size={15} />
-                      <span className="truncate">{item.label}</span>
+                      <item.icon size={14} className="shrink-0" />
+                      <span className="whitespace-nowrap lg:truncate">{item.label}</span>
                     </div>
                   ))}
                 </nav>
               </aside>
 
               {/* Main */}
-              <div className="flex-1 bg-gradient-to-br from-white/40 via-primary/5 to-accent/10 p-5 sm:p-7">
+              <div className="flex-1 bg-gradient-to-br from-white/40 via-primary/5 to-accent/10 p-4 sm:p-7">
                 {/* Top bar */}
-                <div className="mb-6 flex flex-wrap items-center justify-between gap-3">
-                  <div className="flex items-center gap-3">
-                    <h3 className="font-display text-lg font-bold">Overview</h3>
+                <div className="mb-5 flex flex-wrap items-center justify-between gap-2 sm:mb-6 sm:gap-3">
+                  <div className="flex items-center gap-2 sm:gap-3">
+                    <h3 className="font-display text-base font-bold sm:text-lg">Overview</h3>
                     <span className="hidden items-center gap-1.5 rounded-full bg-white/70 px-3 py-1 text-xs font-medium sm:inline-flex">
                       <Building2 size={12} />
                       Sunshine Child Development Centre
@@ -123,24 +123,24 @@ export function CdcOS() {
                 </div>
 
                 {/* Roadmap stepper */}
-                <div className="glass-soft rounded-2xl p-5">
-                  <div className="relative flex items-start justify-between gap-2 overflow-x-auto pb-2">
+                <div className="glass-soft rounded-2xl p-3 sm:p-5">
+                  <div className="relative -mx-1 flex items-start justify-between gap-1 overflow-x-auto px-1 pb-2 sm:gap-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
                     {steps.map((step, i) => {
                       const isDone = step.state === "done";
                       const isCurrent = step.state === "current";
                       const isPreview = step.state === "preview";
                       return (
-                        <div key={step.label} className="relative flex flex-1 min-w-[90px] flex-col items-center">
+                        <div key={step.label} className="relative flex flex-1 min-w-[70px] flex-col items-center sm:min-w-[90px]">
                           {i < steps.length - 1 && (
                             <div
-                              className={`absolute left-1/2 top-5 h-0.5 w-full ${
+                              className={`absolute left-1/2 top-4 h-0.5 w-full sm:top-5 ${
                                 isDone || isCurrent ? "bg-emerald-400" : "bg-emerald-300"
                               }`}
                               style={{ zIndex: 0 }}
                             />
                           )}
                           <div
-                            className={`relative z-10 grid h-10 w-10 place-items-center rounded-full border-2 ${
+                            className={`relative z-10 grid h-8 w-8 place-items-center rounded-full border-2 sm:h-10 sm:w-10 ${
                               isCurrent
                                 ? "border-amber-400 bg-amber-50 text-amber-600"
                                 : isPreview
@@ -149,14 +149,14 @@ export function CdcOS() {
                             }`}
                           >
                             {isCurrent ? (
-                              <SettingsIcon size={16} />
+                              <SettingsIcon size={14} />
                             ) : isPreview ? (
-                              <Eye size={16} />
+                              <Eye size={14} />
                             ) : (
-                              <Check size={16} strokeWidth={3} />
+                              <Check size={14} strokeWidth={3} />
                             )}
                           </div>
-                          <span className="mt-2 text-center text-[11px] font-medium">
+                          <span className="mt-1.5 text-center text-[10px] font-medium leading-tight sm:mt-2 sm:text-[11px]">
                             {step.label}
                           </span>
                         </div>
