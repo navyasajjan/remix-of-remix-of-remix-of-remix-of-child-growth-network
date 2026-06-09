@@ -12,22 +12,22 @@ const benefits = [
 
 export function ForCdcOwners() {
   return (
-    <section id="cdc-owners" className="relative py-20 sm:py-28">
-      <div className="mx-auto max-w-6xl px-5">
+    <section id="cdc-owners" className="relative py-14 sm:py-28">
+      <div className="mx-auto max-w-6xl px-4 sm:px-5">
         <Reveal>
-          <div className="ambient-bg relative overflow-hidden rounded-[44px] border border-white/60 p-8 sm:p-14">
-            <div className="relative grid items-center gap-10 lg:grid-cols-2">
+          <div className="ambient-bg relative overflow-hidden rounded-3xl border border-white/60 p-5 sm:rounded-[44px] sm:p-14">
+            <div className="relative grid items-center gap-8 lg:grid-cols-2 lg:gap-10">
               <div>
-                <h2 className="text-3xl font-bold sm:text-4xl">
+                <h2 className="text-2xl font-bold sm:text-4xl">
                   Benefits For CDCs
                 </h2>
-                <p className="mt-4 max-w-md text-muted-foreground">
+                <p className="mt-3 max-w-md text-sm text-muted-foreground sm:mt-4 sm:text-base">
                   Turn discovery into appointments and run your centre with the
                   clarity of a modern product.
                 </p>
                 <Link
                   to="/list-your-cdc"
-                  className="mt-7 inline-flex items-center gap-1.5 rounded-full bg-foreground px-7 py-3.5 text-sm font-semibold text-background transition-transform hover:scale-[1.03]"
+                  className="mt-5 inline-flex items-center gap-1.5 rounded-full bg-foreground px-6 py-3 text-sm font-semibold text-background transition-transform hover:scale-[1.03] sm:mt-7 sm:px-7 sm:py-3.5"
                 >
                   List Your CDC <ArrowRight size={16} />
                 </Link>
