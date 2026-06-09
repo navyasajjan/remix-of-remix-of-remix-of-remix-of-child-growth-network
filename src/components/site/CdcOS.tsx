@@ -58,8 +58,8 @@ export function CdcOS() {
           <div className="glass overflow-hidden rounded-[28px] p-0 shadow-xl">
             <div className="flex min-h-[520px] flex-col lg:flex-row">
               {/* Sidebar */}
-              <aside className="w-full shrink-0 border-b border-white/40 bg-white/60 p-4 lg:w-64 lg:border-b-0 lg:border-r">
-                <div className="mb-4 flex items-center justify-between gap-2 rounded-xl bg-white/70 p-2.5">
+              <aside className="w-full shrink-0 border-b border-white/40 bg-white/60 p-3 sm:p-4 lg:w-64 lg:border-b-0 lg:border-r">
+                <div className="mb-3 flex items-center justify-between gap-2 rounded-xl bg-white/70 p-2.5 lg:mb-4">
                   <div className="flex items-center gap-2 min-w-0">
                     <div className="grid h-8 w-8 shrink-0 place-items-center rounded-lg bg-gradient-to-br from-primary to-primary/70 text-[10px] font-bold text-primary-foreground">
                       CDC
@@ -77,18 +77,18 @@ export function CdcOS() {
                     Approved
                   </span>
                 </div>
-                <nav className="flex flex-col gap-0.5">
+                <nav className="-mx-1 flex gap-1.5 overflow-x-auto px-1 pb-1 lg:mx-0 lg:flex-col lg:gap-0.5 lg:overflow-visible lg:px-0 lg:pb-0 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
                   {sidebar.map((item) => (
                     <div
                       key={item.label}
-                      className={`flex items-center gap-2.5 rounded-lg px-3 py-2 text-[13px] font-medium transition ${
+                      className={`flex shrink-0 items-center gap-2 rounded-lg px-2.5 py-1.5 text-[12px] font-medium transition lg:gap-2.5 lg:px-3 lg:py-2 lg:text-[13px] ${
                         item.active
                           ? "bg-primary/10 text-primary"
                           : "text-muted-foreground hover:bg-white/60"
                       }`}
                     >
-                      <item.icon size={15} />
-                      <span className="truncate">{item.label}</span>
+                      <item.icon size={14} className="shrink-0" />
+                      <span className="whitespace-nowrap lg:truncate">{item.label}</span>
                     </div>
                   ))}
                 </nav>
