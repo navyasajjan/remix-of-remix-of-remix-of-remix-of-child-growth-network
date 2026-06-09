@@ -14,7 +14,63 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      cdcs: {
+        Row: {
+          address: string | null
+          city: string
+          contact_person: string | null
+          created_at: string
+          description: string | null
+          email: string | null
+          id: string
+          is_published: boolean
+          is_verified: boolean
+          name: string
+          phone: string | null
+          pincode: string | null
+          state: string
+          therapies: string[]
+          updated_at: string
+          website: string | null
+        }
+        Insert: {
+          address?: string | null
+          city: string
+          contact_person?: string | null
+          created_at?: string
+          description?: string | null
+          email?: string | null
+          id?: string
+          is_published?: boolean
+          is_verified?: boolean
+          name: string
+          phone?: string | null
+          pincode?: string | null
+          state: string
+          therapies?: string[]
+          updated_at?: string
+          website?: string | null
+        }
+        Update: {
+          address?: string | null
+          city?: string
+          contact_person?: string | null
+          created_at?: string
+          description?: string | null
+          email?: string | null
+          id?: string
+          is_published?: boolean
+          is_verified?: boolean
+          name?: string
+          phone?: string | null
+          pincode?: string | null
+          state?: string
+          therapies?: string[]
+          updated_at?: string
+          website?: string | null
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
