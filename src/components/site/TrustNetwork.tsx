@@ -11,7 +11,7 @@ const stages = [
   },
   {
     icon: BadgeCheck,
-    title: "Claimed CDC",
+    title: "verified CDC",
     desc: "Ownership verified via phone and email.",
     tint: "from-accent/30 to-accent/5",
     color: "text-accent-foreground",
