@@ -33,9 +33,9 @@ function ForCdcsPage() {
       <Navbar />
       <main>
         <CdcHero />
-        <TrustNetwork />
-        <CdcOS />
         <ForCdcOwners />
+        <CdcOS />
+        <TrustNetwork />
       </main>
       <Footer />
     </div>
