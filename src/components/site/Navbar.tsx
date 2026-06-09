@@ -64,12 +64,12 @@ export function Navbar() {
             Sign In
           </a>
           {isCdcPage ? (
-            <a
-              href="#"
+            <Link
+              to="/list-your-cdc"
               className="rounded-full bg-foreground px-5 py-2.5 text-sm font-semibold text-background transition-transform hover:scale-[1.03]"
             >
-              Claim Your CDC
-            </a>
+              List Your CDC
+            </Link>
           ) : (
             <Link
               to="/"
