@@ -1,6 +1,6 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { motion } from "motion/react";
-import { Building2 } from "lucide-react";
+import { Building2, ArrowRight } from "lucide-react";
 import { Navbar } from "@/components/site/Navbar";
 import { TrustNetwork } from "@/components/site/TrustNetwork";
 import { CdcOS } from "@/components/site/CdcOS";
