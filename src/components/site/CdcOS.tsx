@@ -42,20 +42,20 @@ const steps = [
 
 export function CdcOS() {
   return (
-    <section id="cdc-os" className="relative py-20 sm:py-28">
-      <div className="mx-auto max-w-6xl px-5">
+    <section id="cdc-os" className="relative py-14 sm:py-28">
+      <div className="mx-auto max-w-6xl px-4 sm:px-5">
         <Reveal className="mx-auto max-w-2xl text-center">
-          <h2 className="text-3xl font-bold sm:text-4xl">
+          <h2 className="text-2xl font-bold sm:text-4xl">
             The CDC Operating System
           </h2>
-          <p className="mt-4 text-muted-foreground">
+          <p className="mt-3 text-sm text-muted-foreground sm:mt-4 sm:text-base">
             Your admin dashboard — guided setup, staff, services, registrations,
             analytics, and publishing in one calm workspace.
           </p>
         </Reveal>
 
-        <Reveal delay={0.1} className="mt-12">
-          <div className="glass overflow-hidden rounded-[28px] p-0 shadow-xl">
+        <Reveal delay={0.1} className="mt-8 sm:mt-12">
+          <div className="glass overflow-hidden rounded-2xl p-0 shadow-xl sm:rounded-[28px]">
             <div className="flex min-h-[520px] flex-col lg:flex-row">
               {/* Sidebar */}
               <aside className="w-full shrink-0 border-b border-white/40 bg-white/60 p-3 sm:p-4 lg:w-64 lg:border-b-0 lg:border-r">
