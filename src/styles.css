@@ -1,0 +1,172 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 16px);
+  --radius-4xl: calc(var(--radius) + 28px);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-coral: var(--coral);
+  --color-lavender: var(--lavender);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --font-display: "Sora", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Manrope", ui-sans-serif, system-ui, sans-serif;
+}
+
+:root {
+  --radius: 1.5rem;
+
+  /* Warm white */
+  --background: oklch(0.985 0.004 95);
+  --foreground: oklch(0.26 0.02 260);
+
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.26 0.02 260);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.26 0.02 260);
+
+  /* Soft Teal #34D6C6 */
+  --primary: oklch(0.79 0.13 185);
+  --primary-foreground: oklch(0.22 0.03 200);
+
+  --secondary: oklch(0.96 0.01 95);
+  --secondary-foreground: oklch(0.3 0.02 260);
+
+  --muted: oklch(0.95 0.008 95);
+  --muted-foreground: oklch(0.52 0.02 260);
+
+  /* Soft Lavender #DCCFFF */
+  --accent: oklch(0.87 0.06 300);
+  --accent-foreground: oklch(0.3 0.04 300);
+
+  /* Warm Coral #FF9A6C */
+  --coral: oklch(0.78 0.13 45);
+  /* Soft Lavender */
+  --lavender: oklch(0.87 0.06 300);
+
+  --destructive: oklch(0.62 0.2 25);
+  --destructive-foreground: oklch(0.98 0 0);
+
+  --border: oklch(0.9 0.01 260);
+  --input: oklch(0.9 0.01 260);
+  --ring: oklch(0.79 0.13 185);
+
+  --teal-rgb: 52, 214, 198;
+  --coral-rgb: 255, 154, 108;
+  --lavender-rgb: 220, 207, 255;
+}
+
+@theme inline {
+  --animate-float: float 7s ease-in-out infinite;
+  --animate-float-slow: float 11s ease-in-out infinite;
+  --animate-pulse-glow: pulse-glow 3s ease-in-out infinite;
+  --animate-marker: marker 2.5s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-14px); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.5; transform: scale(1); }
+  50% { opacity: 0.9; transform: scale(1.08); }
+}
+
+@keyframes marker {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-5px) scale(1.06); }
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    letter-spacing: -0.025em;
+  }
+}
+
+/* Ambient warm-white canvas with soft color blooms */
+@utility ambient-bg {
+  background:
+    radial-gradient(60rem 40rem at 12% -8%, rgba(var(--teal-rgb), 0.18), transparent 60%),
+    radial-gradient(50rem 38rem at 92% 6%, rgba(var(--coral-rgb), 0.16), transparent 60%),
+    radial-gradient(55rem 45rem at 50% 110%, rgba(var(--lavender-rgb), 0.4), transparent 60%),
+    var(--background);
+}
+
+/* Frosted translucent glass surfaces */
+@utility glass {
+  background: rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(28px) saturate(160%);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.6) inset,
+    0 20px 50px -24px rgba(40, 50, 80, 0.28);
+}
+
+@utility glass-soft {
+  background: rgba(255, 255, 255, 0.38);
+  backdrop-filter: blur(20px) saturate(150%);
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  box-shadow: 0 18px 44px -28px rgba(40, 50, 80, 0.25);
+}
+
+@utility glass-strong {
+  background: rgba(255, 255, 255, 0.78);
+  backdrop-filter: blur(34px) saturate(170%);
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.8) inset,
+    0 26px 64px -28px rgba(40, 50, 80, 0.32);
+}
+
+@utility glow-teal {
+  box-shadow: 0 0 0 1px rgba(var(--teal-rgb), 0.25), 0 16px 50px -12px rgba(var(--teal-rgb), 0.45);
+}
+
+@utility text-balance {
+  text-wrap: balance;
+}
+
+@utility section-pad {
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
