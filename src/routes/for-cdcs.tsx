@@ -45,7 +45,7 @@ function ForCdcsPage() {
 
 function CdcCta() {
   return (
-    <section className="relative py-10 sm:py-16">
+    <section className="relative py-6 sm:py-16">
       <div className="mx-auto max-w-4xl px-5 text-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -55,7 +55,7 @@ function CdcCta() {
         >
           <Link
             to="/list-your-cdc"
-            className="inline-flex items-center gap-2 rounded-full bg-foreground px-8 py-4 text-base font-semibold text-background transition-transform hover:scale-[1.03]"
+            className="inline-flex items-center gap-2 rounded-full bg-foreground px-6 py-3 text-sm font-semibold text-background transition-transform hover:scale-[1.03] sm:px-8 sm:py-4 sm:text-base"
           >
             List Your CDC <ArrowRight size={18} />
           </Link>
@@ -67,15 +67,15 @@ function CdcCta() {
 
 function CdcHero() {
   return (
-    <section className="relative overflow-hidden pt-28 pb-10 sm:pt-36 sm:pb-16">
+    <section className="relative overflow-hidden pt-24 pb-6 sm:pt-36 sm:pb-16">
       <div className="mx-auto max-w-4xl px-5 text-center">
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="glass-soft mx-auto mb-6 inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-sm font-medium text-foreground"
+          className="glass-soft mx-auto mb-5 inline-flex items-center gap-2 rounded-full px-3.5 py-1.5 text-xs font-medium text-foreground sm:mb-6 sm:px-4 sm:text-sm"
         >
-          <Building2 size={15} className="text-primary" />
+          <Building2 size={14} className="text-primary" />
           For Child Development Centres
         </motion.div>
 
@@ -83,7 +83,7 @@ function CdcHero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.05 }}
-          className="text-balance text-4xl font-extrabold leading-[1.05] sm:text-5xl lg:text-6xl"
+          className="text-balance text-3xl font-extrabold leading-[1.1] sm:text-5xl lg:text-6xl"
         >
           Get Discovered By More Parents
         </motion.h1>
@@ -92,7 +92,7 @@ function CdcHero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.15 }}
-          className="mx-auto mt-5 max-w-2xl text-balance text-base leading-relaxed text-muted-foreground sm:text-lg"
+          className="mx-auto mt-4 max-w-2xl text-balance text-sm leading-relaxed text-muted-foreground sm:mt-5 sm:text-lg"
         >
           Join India's Child Development Network and manage your centre with ManoSetu.
         </motion.p>
