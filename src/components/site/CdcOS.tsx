@@ -95,11 +95,11 @@ export function CdcOS() {
               </aside>
 
               {/* Main */}
-              <div className="flex-1 bg-gradient-to-br from-white/40 via-primary/5 to-accent/10 p-5 sm:p-7">
+              <div className="flex-1 bg-gradient-to-br from-white/40 via-primary/5 to-accent/10 p-4 sm:p-7">
                 {/* Top bar */}
-                <div className="mb-6 flex flex-wrap items-center justify-between gap-3">
-                  <div className="flex items-center gap-3">
-                    <h3 className="font-display text-lg font-bold">Overview</h3>
+                <div className="mb-5 flex flex-wrap items-center justify-between gap-2 sm:mb-6 sm:gap-3">
+                  <div className="flex items-center gap-2 sm:gap-3">
+                    <h3 className="font-display text-base font-bold sm:text-lg">Overview</h3>
                     <span className="hidden items-center gap-1.5 rounded-full bg-white/70 px-3 py-1 text-xs font-medium sm:inline-flex">
                       <Building2 size={12} />
                       Sunshine Child Development Centre
@@ -123,24 +123,24 @@ export function CdcOS() {
                 </div>
 
                 {/* Roadmap stepper */}
-                <div className="glass-soft rounded-2xl p-5">
-                  <div className="relative flex items-start justify-between gap-2 overflow-x-auto pb-2">
+                <div className="glass-soft rounded-2xl p-3 sm:p-5">
+                  <div className="relative -mx-1 flex items-start justify-between gap-1 overflow-x-auto px-1 pb-2 sm:gap-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
                     {steps.map((step, i) => {
                       const isDone = step.state === "done";
                       const isCurrent = step.state === "current";
                       const isPreview = step.state === "preview";
                       return (
-                        <div key={step.label} className="relative flex flex-1 min-w-[90px] flex-col items-center">
+                        <div key={step.label} className="relative flex flex-1 min-w-[70px] flex-col items-center sm:min-w-[90px]">
                           {i < steps.length - 1 && (
                             <div
-                              className={`absolute left-1/2 top-5 h-0.5 w-full ${
+                              className={`absolute left-1/2 top-4 h-0.5 w-full sm:top-5 ${
                                 isDone || isCurrent ? "bg-emerald-400" : "bg-emerald-300"
                               }`}
                               style={{ zIndex: 0 }}
                             />
                           )}
                           <div
-                            className={`relative z-10 grid h-10 w-10 place-items-center rounded-full border-2 ${
+                            className={`relative z-10 grid h-8 w-8 place-items-center rounded-full border-2 sm:h-10 sm:w-10 ${
                               isCurrent
                                 ? "border-amber-400 bg-amber-50 text-amber-600"
                                 : isPreview
@@ -149,14 +149,14 @@ export function CdcOS() {
                             }`}
                           >
                             {isCurrent ? (
-                              <SettingsIcon size={16} />
+                              <SettingsIcon size={14} />
                             ) : isPreview ? (
-                              <Eye size={16} />
+                              <Eye size={14} />
                             ) : (
-                              <Check size={16} strokeWidth={3} />
+                              <Check size={14} strokeWidth={3} />
                             )}
                           </div>
-                          <span className="mt-2 text-center text-[11px] font-medium">
+                          <span className="mt-1.5 text-center text-[10px] font-medium leading-tight sm:mt-2 sm:text-[11px]">
                             {step.label}
                           </span>
                         </div>
