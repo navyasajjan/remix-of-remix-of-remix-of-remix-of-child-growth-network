@@ -74,25 +74,6 @@ function CdcHero() {
           Join India's Child Development Network and manage your centre with ManoSetu.
         </motion.p>
 
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.7, delay: 0.3 }}
-          className="mt-8 flex flex-wrap items-center justify-center gap-3"
-        >
-          <a
-            href="#"
-            className="inline-flex items-center gap-1.5 rounded-full bg-foreground px-7 py-3.5 text-sm font-semibold text-background transition-transform hover:scale-[1.03]"
-          >
-            Claim Your CDC <ArrowRight size={16} />
-          </a>
-          <a
-            href="#cdc-os"
-            className="inline-flex items-center gap-1.5 rounded-full border border-border bg-white/40 px-7 py-3.5 text-sm font-semibold backdrop-blur transition-colors hover:bg-white/70"
-          >
-            <Sparkles size={15} /> See The Platform
-          </a>
-        </motion.div>
       </div>
     </section>
   );
