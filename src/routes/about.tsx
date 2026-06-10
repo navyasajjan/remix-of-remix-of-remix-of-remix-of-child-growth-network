@@ -15,7 +15,7 @@ import {
 import { Navbar } from "@/components/site/Navbar";
 import { Footer } from "@/components/site/Footer";
 import { Reveal } from "@/components/site/Reveal";
-import nataraju from "@/assets/nataraju.jpg.asset.json";
+import nataraju from "@/assets/nataraju-portrait.png";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -408,11 +408,16 @@ function Founder() {
         <div className="mt-14 grid gap-6 lg:grid-cols-[1fr_1.4fr] lg:gap-8">
           <Reveal>
             <div className="glass relative h-full overflow-hidden rounded-[36px] p-8 text-center sm:p-10">
-              <div className="absolute -right-16 -top-16 h-48 w-48 rounded-full bg-primary/20 blur-3xl" />
-              <div className="absolute -bottom-16 -left-16 h-48 w-48 rounded-full bg-coral/15 blur-3xl" />
+              <div className="absolute -right-20 -top-24 h-64 w-64 rounded-full bg-primary/25 blur-3xl" />
+              <div className="absolute -bottom-24 -left-20 h-64 w-64 rounded-full bg-coral/20 blur-3xl" />
+              <div className="absolute inset-x-6 bottom-6 top-6 -z-0 rounded-[28px] bg-gradient-to-b from-accent/20 via-primary/10 to-transparent" />
 
-              <div className="relative mx-auto h-40 w-40 overflow-hidden rounded-full ring-4 ring-white/70 shadow-xl sm:h-48 sm:w-48">
-                <img src={nataraju.url} alt="Cdr. (Retd.) A. Nataraju" className="h-full w-full object-cover" />
+              <div className="relative mx-auto flex aspect-[3/4] w-full max-w-[280px] items-end justify-center overflow-hidden rounded-[28px]">
+                <img
+                  src={nataraju}
+                  alt="Cdr. (Retd.) A. Nataraju"
+                  className="h-full w-full object-contain object-bottom drop-shadow-[0_18px_30px_rgba(40,50,80,0.18)]"
+                />
               </div>
               <h3 className="relative mt-6 text-xl font-bold sm:text-2xl">
                 Cdr. (Retd.) A. Nataraju
