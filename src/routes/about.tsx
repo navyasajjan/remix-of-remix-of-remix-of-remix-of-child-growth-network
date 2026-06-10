@@ -15,6 +15,7 @@ import {
 import { Navbar } from "@/components/site/Navbar";
 import { Footer } from "@/components/site/Footer";
 import { Reveal } from "@/components/site/Reveal";
+import nataraju from "@/assets/nataraju.jpg.asset.json";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -410,8 +411,8 @@ function Founder() {
               <div className="absolute -right-16 -top-16 h-48 w-48 rounded-full bg-primary/20 blur-3xl" />
               <div className="absolute -bottom-16 -left-16 h-48 w-48 rounded-full bg-coral/15 blur-3xl" />
 
-              <div className="relative mx-auto grid h-28 w-28 place-items-center rounded-full bg-gradient-to-br from-primary/30 via-accent/30 to-coral/20 text-3xl font-extrabold text-foreground sm:h-32 sm:w-32 sm:text-4xl">
-                AN
+              <div className="relative mx-auto h-40 w-40 overflow-hidden rounded-full ring-4 ring-white/70 shadow-xl sm:h-48 sm:w-48">
+                <img src={nataraju.url} alt="Cdr. (Retd.) A. Nataraju" className="h-full w-full object-cover" />
               </div>
               <h3 className="relative mt-6 text-xl font-bold sm:text-2xl">
                 Cdr. (Retd.) A. Nataraju
