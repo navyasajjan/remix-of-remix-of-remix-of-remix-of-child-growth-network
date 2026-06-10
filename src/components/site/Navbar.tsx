@@ -11,7 +11,7 @@ const PARENT_LINKS: NavLink[] = [
   { label: "Find CDCs", to: "/", hash: "map" },
   { label: "How It Works", to: "/", hash: "how" },
   { label: "Resources", to: "/", hash: "resources" },
-  { label: "About", to: "/", hash: "about" },
+  { label: "About", to: "/about" },
   { label: "For CDCs", to: "/for-cdcs" },
 ];
 
